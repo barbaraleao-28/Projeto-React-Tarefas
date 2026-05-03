@@ -36,7 +36,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-8">
         <TaskForm adicionarTarefa={adicionarTarefa} />
