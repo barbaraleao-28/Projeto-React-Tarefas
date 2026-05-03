@@ -37,6 +37,7 @@ function TaskForm({ adicionarTarefa }) {
           className="rounded-2xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-slate-100 outline-none transition focus:border-purple-400"
           placeholder="Escreve sua tarefa"
           value={titulo}
+          required
           onChange={(evento) => setTitulo(evento.target.value)}
         />
         <select
