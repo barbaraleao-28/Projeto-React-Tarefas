@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import TaskForm from './components/TaskForm'
+import WeekBoard from './components/WeekBoard'
 import tarefasIniciais from './data/tasks.json'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <div className="rounded-3xl border border-purple-500/30 bg-slate-800/60 p-5 text-slate-100 backdrop-blur">
           Tarefas carregadas: <strong>{listaTarefas.length}</strong>
         </div>
+        <WeekBoard listaTarefas={listaTarefas} />
       </main>
     </div>
   )
