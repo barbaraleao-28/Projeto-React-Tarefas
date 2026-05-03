@@ -1,6 +1,14 @@
 function TaskCard({ tarefa, marcarConcluida, removerTarefa }) {
+  const estiloDaPrioridade = {
+    Alta: 'border-amber-400 shadow-lg shadow-amber-400/25',
+    Media: 'border-purple-500/30',
+    Baixa: 'border-slate-600',
+  }
+
   return (
-    <article className="mb-3 rounded-2xl border border-purple-500/20 bg-slate-800/80 p-3 text-slate-100">
+    <article
+      className={`mb-3 rounded-2xl border bg-slate-800/80 p-3 text-slate-100 ${estiloDaPrioridade[tarefa.priority]}`}
+    >
       <h3 className="font-medium">{tarefa.title}</h3>
       <p className="mt-2 text-sm text-slate-300">Prioridade: {tarefa.priority}</p>
       <div className="mt-3 space-y-2">
