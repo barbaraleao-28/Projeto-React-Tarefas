@@ -20,6 +20,14 @@ function App() {
     ])
   }
 
+  function marcarConcluida(idDaTarefa) {
+    setListaTarefas((tarefasAtuais) =>
+      tarefasAtuais.map((tarefa) =>
+        tarefa.id === idDaTarefa ? { ...tarefa, done: !tarefa.done } : tarefa,
+      ),
+    )
+  }
+
   return (
     <div className="min-h-screen bg-slate-950">
       <Header />
@@ -28,7 +36,10 @@ function App() {
         <div className="rounded-3xl border border-purple-500/30 bg-slate-800/60 p-5 text-slate-100 backdrop-blur">
           Tarefas carregadas: <strong>{listaTarefas.length}</strong>
         </div>
-        <WeekBoard listaTarefas={listaTarefas} />
+        <WeekBoard
+          listaTarefas={listaTarefas}
+          marcarConcluida={marcarConcluida}
+        />
       </main>
     </div>
   )
