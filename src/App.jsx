@@ -61,6 +61,7 @@ function App() {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(250,204,21,0.18),transparent_45%)]" />
       <StarField />
       <div className="relative z-10">
         <Header />

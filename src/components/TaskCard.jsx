@@ -14,7 +14,7 @@ function TaskCard({ tarefa, marcarConcluida, removerTarefa }) {
       <div className="mt-3 space-y-2">
         <button
           type="button"
-          className="w-full rounded-2xl bg-gradient-to-r from-purple-600 to-blue-500 px-3 py-2 text-sm font-medium text-white"
+          className="w-full rounded-2xl bg-gradient-to-r from-purple-600 to-blue-500 px-3 py-2 text-sm font-medium text-white transition hover:shadow-lg hover:shadow-purple-500/50"
           onClick={() => marcarConcluida(tarefa.id)}
         >
           {tarefa.done ? 'Desmarcar' : 'Concluir'}
