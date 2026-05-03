@@ -10,7 +10,7 @@ const diasDaSemana = [
   'Domingo',
 ]
 
-function TaskForm() {
+function TaskForm({ adicionarTarefa }) {
   const [titulo, setTitulo] = useState('')
   const [diaEscolhido, setDiaEscolhido] = useState(diasDaSemana[0])
   const [prioridadeEscolhida, setPrioridadeEscolhida] = useState('Media')
@@ -18,7 +18,20 @@ function TaskForm() {
   return (
     <section className="mb-6 rounded-3xl border border-purple-500/30 bg-slate-800/60 p-5 text-slate-100 backdrop-blur">
       <h2 className="mb-4 text-xl font-semibold">Nova tarefa</h2>
-      <form className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
+      <form
+        className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4"
+        onSubmit={(evento) => {
+          evento.preventDefault()
+          adicionarTarefa({
+            title: titulo,
+            day: diaEscolhido,
+            priority: prioridadeEscolhida,
+          })
+          setTitulo('')
+          setDiaEscolhido(diasDaSemana[0])
+          setPrioridadeEscolhida('Media')
+        }}
+      >
         <input
           type="text"
           className="rounded-2xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-slate-100 outline-none"
