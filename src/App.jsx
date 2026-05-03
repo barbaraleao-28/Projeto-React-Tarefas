@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Header from './components/Header'
+import Summary from './components/Summary'
 import TaskForm from './components/TaskForm'
 import WeekBoard from './components/WeekBoard'
 import tarefasIniciais from './data/tasks.json'
@@ -39,9 +40,7 @@ function App() {
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-8">
         <TaskForm adicionarTarefa={adicionarTarefa} />
-        <div className="rounded-3xl border border-purple-500/30 bg-slate-800/60 p-5 text-slate-100 backdrop-blur">
-          Tarefas carregadas: <strong>{listaTarefas.length}</strong>
-        </div>
+        <Summary listaTarefas={listaTarefas} />
         <WeekBoard
           listaTarefas={listaTarefas}
           marcarConcluida={marcarConcluida}
