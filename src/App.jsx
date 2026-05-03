@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import Summary from './components/Summary'
+import StarField from './components/StarField'
 import TaskForm from './components/TaskForm'
 import WeekBoard from './components/WeekBoard'
 import tarefasIniciais from './data/tasks.json'
@@ -36,9 +37,11 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Header />
-      <main className="mx-auto max-w-7xl px-4 py-8">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <StarField />
+      <div className="relative z-10">
+        <Header />
+        <main className="mx-auto max-w-7xl px-4 py-8">
         <TaskForm adicionarTarefa={adicionarTarefa} />
         <Summary listaTarefas={listaTarefas} />
         <WeekBoard
@@ -46,7 +49,8 @@ function App() {
           marcarConcluida={marcarConcluida}
           removerTarefa={removerTarefa}
         />
-      </main>
+        </main>
+      </div>
     </div>
   )
 }
