@@ -7,9 +7,11 @@ function TaskCard({ tarefa, marcarConcluida, removerTarefa }) {
 
   return (
     <article
-      className={`mb-3 rounded-2xl border bg-slate-800/80 p-3 text-slate-100 ${estiloDaPrioridade[tarefa.priority]}`}
+      className={`mb-3 rounded-2xl border bg-slate-800/80 p-3 text-slate-100 transition ${estiloDaPrioridade[tarefa.priority]} ${
+        tarefa.done ? 'opacity-60' : ''
+      }`}
     >
-      <h3 className="font-medium">{tarefa.title}</h3>
+      <h3 className={`font-medium ${tarefa.done ? 'line-through' : ''}`}>{tarefa.title}</h3>
       <p className="mt-2 text-sm text-slate-300">Prioridade: {tarefa.priority}</p>
       <div className="mt-3 space-y-2">
         <button
