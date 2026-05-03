@@ -37,6 +37,12 @@ function App() {
     )
   }
 
+  function limparConcluidas() {
+    setListaTarefas((tarefasAtuais) =>
+      tarefasAtuais.filter((tarefa) => !tarefa.done),
+    )
+  }
+
   const tarefasFiltradas = listaTarefas.filter((tarefa) => {
     if (filtroAtual === 'pendentes') {
       return !tarefa.done
@@ -58,40 +64,51 @@ function App() {
         <TaskForm adicionarTarefa={adicionarTarefa} />
         <Summary listaTarefas={listaTarefas} />
         <section className="mb-6 rounded-3xl border border-purple-500/30 bg-slate-800/60 p-5 text-slate-100 backdrop-blur">
-          <h2 className="mb-3 text-lg font-semibold text-yellow-300">Filtros</h2>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <h2 className="mb-3 text-lg font-semibold text-yellow-300">Filtros</h2>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  className={`rounded-2xl px-4 py-2 text-sm font-medium transition ${
+                    filtroAtual === 'todas'
+                      ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white'
+                      : 'bg-slate-900/70 text-slate-200'
+                  }`}
+                  onClick={() => setFiltroAtual('todas')}
+                >
+                  Todas
+                </button>
+                <button
+                  type="button"
+                  className={`rounded-2xl px-4 py-2 text-sm font-medium transition ${
+                    filtroAtual === 'pendentes'
+                      ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white'
+                      : 'bg-slate-900/70 text-slate-200'
+                  }`}
+                  onClick={() => setFiltroAtual('pendentes')}
+                >
+                  Pendentes
+                </button>
+                <button
+                  type="button"
+                  className={`rounded-2xl px-4 py-2 text-sm font-medium transition ${
+                    filtroAtual === 'concluidas'
+                      ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white'
+                      : 'bg-slate-900/70 text-slate-200'
+                  }`}
+                  onClick={() => setFiltroAtual('concluidas')}
+                >
+                  Concluidas
+                </button>
+              </div>
+            </div>
             <button
               type="button"
-              className={`rounded-2xl px-4 py-2 text-sm font-medium transition ${
-                filtroAtual === 'todas'
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white'
-                  : 'bg-slate-900/70 text-slate-200'
-              }`}
-              onClick={() => setFiltroAtual('todas')}
+              className="rounded-2xl border border-amber-400/60 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-300 transition hover:shadow-lg hover:shadow-amber-400/30"
+              onClick={limparConcluidas}
             >
-              Todas
-            </button>
-            <button
-              type="button"
-              className={`rounded-2xl px-4 py-2 text-sm font-medium transition ${
-                filtroAtual === 'pendentes'
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white'
-                  : 'bg-slate-900/70 text-slate-200'
-              }`}
-              onClick={() => setFiltroAtual('pendentes')}
-            >
-              Pendentes
-            </button>
-            <button
-              type="button"
-              className={`rounded-2xl px-4 py-2 text-sm font-medium transition ${
-                filtroAtual === 'concluidas'
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white'
-                  : 'bg-slate-900/70 text-slate-200'
-              }`}
-              onClick={() => setFiltroAtual('concluidas')}
-            >
-              Concluidas
+              Limpar concluidas
             </button>
           </div>
         </section>
