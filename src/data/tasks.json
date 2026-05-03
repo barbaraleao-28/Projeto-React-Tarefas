@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Revisar anotacoes de react",
+    "day": "Segunda",
+    "priority": "Alta",
+    "done": false
+  },
+  {
+    "id": 2,
+    "title": "Fazer atividade de banco",
+    "day": "Terca",
+    "priority": "Media",
+    "done": false
+  },
+  {
+    "id": 3,
+    "title": "Estudar javascript",
+    "day": "Quarta",
+    "priority": "Alta",
+    "done": true
+  },
+  {
+    "id": 4,
+    "title": "Separar material do trabalho",
+    "day": "Quinta",
+    "priority": "Baixa",
+    "done": false
+  },
+  {
+    "id": 5,
+    "title": "Treinar css",
+    "day": "Sexta",
+    "priority": "Media",
+    "done": false
+  },
+  {
+    "id": 6,
+    "title": "Organizar a semana",
+    "day": "Sabado",
+    "priority": "Baixa",
+    "done": true
+  },
+  {
+    "id": 7,
+    "title": "Preparar apresentacao",
+    "day": "Domingo",
+    "priority": "Alta",
+    "done": false
+  }
+]
